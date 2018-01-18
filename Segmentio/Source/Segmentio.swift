@@ -327,6 +327,7 @@ open class Segmentio: UIView {
         segmentioCollectionView?.reloadData()
         scrollToItemAtContext()
         moveShapeLayerAtContext()
+        setupHorizontalSeparatorIfPossible()
     }
 
     // MARK: Move shape layer to item
