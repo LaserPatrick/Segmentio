@@ -15,7 +15,7 @@ class BadgeViewPresenter {
         var badgeView: BadgeWithCounterView!
         for view in containerView.subviews {
             if view is BadgeWithCounterView {
-                badgeView = view as! BadgeWithCounterView
+                badgeView = view as? BadgeWithCounterView
                 badgeView?.setBadgeBackgroundColor(backgroundColor)
                 badgeView?.setBadgeCounterValue(counterValue)
             }
