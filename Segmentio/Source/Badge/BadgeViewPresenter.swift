@@ -24,7 +24,11 @@ class BadgeViewPresenter {
             badgeView = badgeViewForCounterValue(counterValue, backgroundColor: backgroundColor, size: badgeSize)
             badgeView.translatesAutoresizingMaskIntoConstraints = false
             containerView.addSubview(badgeView)
+            #if swift(>=4.2)
+            containerView.bringSubviewToFront(badgeView)
+            #else
             containerView.bringSubview(toFront: badgeView)
+            #endif
             setupBadgeConstraints(badgeView, counterValue: counterValue)
         }
     }

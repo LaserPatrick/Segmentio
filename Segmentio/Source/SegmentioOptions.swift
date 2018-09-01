@@ -186,13 +186,19 @@ public typealias SegmentioStates = (defaultState: SegmentioState, selectedState:
 
 public struct SegmentioOptions {
     
+    #if swift(>=4.2)
+    public typealias viewContentMode = UIView.ContentMode
+    #else
+    public typealias viewContentMode = UIViewContentMode
+    #endif
+    
     var backgroundColor: UIColor
     var segmentPosition: SegmentioPosition
     var scrollEnabled: Bool
     var horizontalSeparatorOptions: SegmentioHorizontalSeparatorOptions?
     var verticalSeparatorOptions: SegmentioVerticalSeparatorOptions?
     var indicatorOptions: SegmentioIndicatorOptions?
-    var imageContentMode: UIViewContentMode
+    var imageContentMode: viewContentMode
     var labelTextAlignment: NSTextAlignment
     var labelTextNumberOfLines: Int
     var states: SegmentioStates
@@ -204,7 +210,7 @@ public struct SegmentioOptions {
                 indicatorOptions: SegmentioIndicatorOptions? = SegmentioIndicatorOptions(),
                 horizontalSeparatorOptions: SegmentioHorizontalSeparatorOptions? = SegmentioHorizontalSeparatorOptions(),
                 verticalSeparatorOptions: SegmentioVerticalSeparatorOptions? = SegmentioVerticalSeparatorOptions(),
-                imageContentMode: UIViewContentMode = .center,
+                imageContentMode: viewContentMode = .center,
                 labelTextAlignment: NSTextAlignment = .center,
                 labelTextNumberOfLines: Int = 0,
                 segmentStates: SegmentioStates = SegmentioStates(defaultState: SegmentioState(),
