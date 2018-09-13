@@ -675,12 +675,18 @@ extension Segmentio.Points {
         }
         // Cell will try to position itself in the middle, unless it can't because
         // the collection view has reached the beginning or end
-        startX = (item.collectionViewWidth / 2) - (cellWidth / 2 )
-        if spaceBefore < (item.collectionViewWidth - cellWidth) / 2 {
-            startX = spaceBefore
-        }
-        if spaceAfter < (item.collectionViewWidth - cellWidth) / 2 {
-            startX = item.collectionViewWidth - spaceAfter - cellWidth
+        let possibleStartX = (item.collectionViewWidth / 2) - (cellWidth / 2 )
+        if possibleStartX < startX
+        {
+            startX = possibleStartX
+            if spaceBefore < (item.collectionViewWidth - cellWidth) / 2
+            {
+                startX = spaceBefore
+            }
+            if spaceAfter < (item.collectionViewWidth - cellWidth) / 2
+            {
+                startX = item.collectionViewWidth - spaceAfter - cellWidth
+            }
         }
         endX = startX + cellWidth
         
