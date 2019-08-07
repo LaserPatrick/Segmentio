@@ -50,16 +50,19 @@ public struct SegmentioState {
     var titleFont: UIFont
     var titleTextColor: UIColor
     var imageTintColor: UIColor
+    var titleAlpha: CGFloat
     
     public init(
         backgroundColor: UIColor = .clear,
         titleFont: UIFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize),
         titleTextColor: UIColor = .black,
-        imageTintColor: UIColor? = nil) {
+        imageTintColor: UIColor? = nil,
+        titleAlpha: CGFloat = 1) {
         self.backgroundColor = backgroundColor
         self.titleFont = titleFont
         self.titleTextColor = titleTextColor
         self.imageTintColor = imageTintColor ?? titleTextColor
+        self.titleAlpha = titleAlpha
     }
     
 }
